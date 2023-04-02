@@ -67,12 +67,12 @@ Lamp.prototype.turnOn = function() {
 }
 
 // Дочерний объект - компьютер
-function Computer(name, power, brand, model) {
+function Computer(name, power, brand, model, username, password) {
     ElectricalAppliance.call(this, name, power);
     this.brand = brand;
     this.model = model;
-    this.username = 'admin';
-    this.password = '1234';
+    this.username = username;
+    this.password = password;
 }
 
 // Устанавливаем связь прототипа компьютера с родительским объектом
@@ -116,8 +116,8 @@ Computer.prototype.logout = function () {
 }
 
 // Создание экземпляров
-const lamp = new Lamp('Настольная лампа', 40);
-const computer = new Computer('Мой компьютер', 'Dell', 'Inspiron 5000', 'admin', '1234');
+const lamp = new Lamp('Настольная лампа', 40, 1);
+const computer = new Computer('Мой компьютер', undefined,'Dell', 'Inspiron 5000', 'admin', '1234');
 
 // Включение приборов
 lamp.plugIn();
