@@ -85,32 +85,32 @@ Computer.prototype.start = function() {
         console.log(`Компьютер "${this.name}" (${this.brand} ${this.model}) запущен.`);
     } else {
         console.log(`Сначала нужно включить компьютер "${this.name}" в розетку.`);
-};
+}
 
 Computer.prototype.shutdown = function () {
-        console.log(`Компьютер "${this.name}" (${this.brand} ${this.model}) выключен.`);
+        console.log(`Компьютер выключен.`);
 };
 
 Computer.prototype.login = function (username, password) {
     if (this.logged) {
-        console.log(`Компьютер "${this.name}" уже в сеансе пользователя "${this.username}".`);
+        console.log(`Компьютер уже в сеансе пользователя "${this.username}".`);
     } else {
-        console.log(`Попытка входа в систему компьютера "${this.name}"...`);
+        console.log(`Попытка входа в систему компьютера`);
         if (username === this.username && password === this.password) {
             this.logged = true;
-            console.log(`Вход в систему компьютера "${this.name}" под пользователем "${this.username}" выполнен успешно.`);
+            console.log(`Вход в систему компьютера под пользователем "${this.username}" выполнен успешно.`);
         } else {
-            console.log(`Не удалось войти в систему компьютера "${this.name}". Проверьте правильность логина и пароля.`);
+            console.log(`Не удалось авторизоваться. Проверьте правильность логина и пароля.`);
         }
     }
 };
 
 Computer.prototype.logout = function () {
     if (this.logged) {
-        console.log(`Выход из системы компьютера "${this.name}" для пользователя "${this.username}".`);
+        console.log(`Выход из системы для пользователя "${this.username}".`);
         this.logged = false;
     } else {
-        console.log(`Компьютер "${this.name}" не был в сеансе пользователя.`);
+        console.log(`Пользователь не был авторизован.`);
     }
 };
 }
